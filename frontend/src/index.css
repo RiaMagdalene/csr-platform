@@ -481,15 +481,15 @@ em {
 }
 
 .legend-dot.high {
-  background: #111;
+  background: #e53935 !important;
 }
 
 .legend-dot.medium {
-  background: #666;
+  background: #f4c430 !important;
 }
 
 .legend-dot.low {
-  background: #aaa;
+  background: #43a047 !important;
 }
 
 .map-count {
