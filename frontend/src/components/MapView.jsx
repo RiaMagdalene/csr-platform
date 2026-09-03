@@ -35,9 +35,9 @@ function MapResizeFix() {
 }
 
 function getGapColor(score) {
-  if (score >= 0.7) return "#e53935"; // Red — high
-  if (score >= 0.45) return "#f4c430"; // Yellow — medium
-  return "#43a047"; // Green — low
+  if (score >= 0.7) return "#e53935";
+  if (score >= 0.45) return "#f4c430";
+  return "#43a047";
 }
 
 function MapView({ onDistrictSelect }) {
@@ -49,6 +49,8 @@ function MapView({ onDistrictSelect }) {
     async function loadDistricts() {
       try {
         setLoading(true);
+        setError("");
+
         const data = await getDistricts();
         setDistricts(data);
       } catch (err) {
@@ -83,6 +85,7 @@ function MapView({ onDistrictSelect }) {
       <div className="map-error">
         <strong>MAP DATA UNAVAILABLE</strong>
         <span>{error}</span>
+
         <button onClick={() => window.location.reload()}>
           RETRY →
         </button>
@@ -103,7 +106,7 @@ function MapView({ onDistrictSelect }) {
         <MapResizeFix />
 
         <TileLayer
-          attribution='&copy; OpenStreetMap contributors'
+          attribution="&copy; OpenStreetMap contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
@@ -127,7 +130,9 @@ function MapView({ onDistrictSelect }) {
             >
               <Popup>
                 <div className="map-popup">
-                  <div className="popup-kicker">DISTRICT SIGNAL</div>
+                  <div className="popup-kicker">
+                    DISTRICT SIGNAL
+                  </div>
 
                   <h3>{district.name}</h3>
 
@@ -147,17 +152,14 @@ function MapView({ onDistrictSelect }) {
                     <div>
                       <span>CSR SPEND</span>
                       <strong>
-                        ₹{Number(district.csr_spend).toLocaleString("en-IN")}
+                        ₹
+                        {Number(district.csr_spend).toLocaleString(
+                          "en-IN"
+                        )}
                       </strong>
                     </div>
                   </div>
 
-                  <button
-                    onClick={() => onDistrictSelect?.(district)}
-                    className="popup-button"
-                  >
-                    VIEW DISTRICT →
-                  </button>
                 </div>
               </Popup>
             </CircleMarker>
