@@ -10,6 +10,7 @@
       "Livelihood"
     ],
     "capacity_tier": "Large",
+    "budget_tier": "Large",
     "website": "https://sevalaya.org"
   },
   {
@@ -25,6 +26,7 @@
       "Environment"
     ],
     "capacity_tier": "Medium",
+    "budget_tier": "Financial data unavailable",
     "website": "https://www.narpanifoundation.org"
   },
   {
@@ -39,6 +41,7 @@
       "Environment"
     ],
     "capacity_tier": "Medium",
+    "budget_tier": "Financial data unavailable",
     "website": "https://www.ifpwd.org"
   },
   {
@@ -51,6 +54,7 @@
       "Women & Child Development"
     ],
     "capacity_tier": "Medium",
+    "budget_tier": "Financial data unavailable",
     "website": "https://www.anewindia.org"
   },
   {
@@ -64,6 +68,7 @@
       "Livelihood"
     ],
     "capacity_tier": "Medium",
+    "budget_tier": "Financial data unavailable",
     "website": "https://www.amarseva.org"
   },
   {
@@ -77,6 +82,7 @@
       "Livelihood"
     ],
     "capacity_tier": "Large",
+    "budget_tier": "Financial data unavailable",
     "website": "https://asscod.org"
   },
   {
@@ -90,6 +96,7 @@
       "Livelihood"
     ],
     "capacity_tier": "Medium",
+    "budget_tier": "Financial data unavailable",
     "website": "https://www.nmctngo.org"
   }
 ]
