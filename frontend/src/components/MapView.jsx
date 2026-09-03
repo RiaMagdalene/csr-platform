@@ -4,6 +4,7 @@ import {
   TileLayer,
   CircleMarker,
   Popup,
+  Tooltip,
   useMap,
 } from "react-leaflet";
 import { getDistricts } from "../api";
@@ -128,6 +129,52 @@ function MapView({ onDistrictSelect }) {
                 click: () => onDistrictSelect?.(district),
               }}
             >
+              {/* HOVER PANEL */}
+              <Tooltip
+                direction="top"
+                offset={[0, -8]}
+                opacity={1}
+                permanent={false}
+                className="district-hover-tooltip"
+              >
+                <div className="hover-panel">
+                  <div className="hover-panel-kicker">
+                    DISTRICT SIGNAL
+                  </div>
+
+                  <div className="hover-panel-name">
+                    {district.name}
+                  </div>
+
+                  <div className="hover-panel-stats">
+                    <div>
+                      <span>NEED</span>
+                      <strong>
+                        {Number(district.need_index || 0).toFixed(0)}
+                      </strong>
+                    </div>
+
+                    <div>
+                      <span>GAP</span>
+                      <strong>
+                        {(gap * 100).toFixed(0)}%
+                      </strong>
+                    </div>
+
+                    <div>
+                      <span>CSR</span>
+                      <strong>
+                        ₹
+                        {Number(
+                          district.csr_spend || 0
+                        ).toLocaleString("en-IN")}
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+              </Tooltip>
+
+              {/* CLICK PANEL */}
               <Popup>
                 <div className="map-popup">
                   <div className="popup-kicker">
@@ -153,13 +200,12 @@ function MapView({ onDistrictSelect }) {
                       <span>CSR SPEND</span>
                       <strong>
                         ₹
-                        {Number(district.csr_spend).toLocaleString(
-                          "en-IN"
-                        )}
+                        {Number(
+                          district.csr_spend
+                        ).toLocaleString("en-IN")}
                       </strong>
                     </div>
                   </div>
-
                 </div>
               </Popup>
             </CircleMarker>

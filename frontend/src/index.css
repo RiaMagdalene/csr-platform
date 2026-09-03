@@ -1008,6 +1008,10 @@ em {
   text-decoration: underline;
 }
 
+/* =========================
+   CSR FORM
+========================= */
+
 .csr-form {
   border-top: 1px solid #111;
   border-bottom: 1px solid #aaa;
@@ -1664,6 +1668,89 @@ em {
 }
 
 /* =========================
+   DISTRICT HOVER PANEL
+========================= */
+
+.district-hover-tooltip {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.leaflet-tooltip.district-hover-tooltip {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.district-hover-tooltip::before,
+.leaflet-tooltip.district-hover-tooltip::before {
+  display: none !important;
+}
+
+.hover-panel {
+  min-width: 220px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  padding: 14px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  font-family: "DM Sans", sans-serif;
+  pointer-events: none;
+}
+
+.hover-panel-kicker {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #aaa;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.hover-panel-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 13px;
+  color: #fff;
+}
+
+.hover-panel-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  border-top: 1px solid #444;
+  padding-top: 11px;
+}
+
+.hover-panel-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.hover-panel-stats span {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #999;
+}
+
+.hover-panel-stats strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -1977,5 +2064,18 @@ em {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+
+  .hover-panel {
+    min-width: 190px;
+    padding: 12px 13px;
+  }
+
+  .hover-panel-name {
+    font-size: 16px;
+  }
+
+  .hover-panel-stats {
+    gap: 8px;
   }
 }
