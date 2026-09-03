@@ -1,72 +1,95 @@
 [
   {
-    "ngo_name": "Education First Foundation",
+    "ngo_name": "Sevalaya",
+    "district_id": "dist_04",
+    "lat": 13.0827,
+    "lng": 80.2707,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Livelihood"
+    ],
+    "capacity_tier": "Large",
+    "website": "https://sevalaya.org"
+  },
+  {
+    "ngo_name": "Narpani Foundation",
     "district_id": "dist_01",
-    "sectors": ["Education", "Women & Child Development"],
-    "capacity_tier": "Large",
-    "website": "https://example.org/education-first"
-  },
-  {
-    "ngo_name": "Rural Health Initiative",
-    "district_id": "dist_05",
-    "sectors": ["Healthcare", "Sanitation"],
+    "lat": 13.0418,
+    "lng": 80.2696,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Sanitation",
+      "Women & Child Development",
+      "Environment"
+    ],
     "capacity_tier": "Medium",
-    "website": "https://example.org/rural-health"
+    "website": "https://www.narpanifoundation.org"
   },
   {
-    "ngo_name": "Green Tamil Nadu Collective",
-    "district_id": "dist_09",
-    "sectors": ["Environment", "Sanitation"],
-    "capacity_tier": "Large",
-    "website": "https://example.org/green-tamil-nadu"
-  },
-  {
-    "ngo_name": "Livelihood Development Network",
-    "district_id": "dist_07",
-    "sectors": ["Livelihood", "Education"],
+    "ngo_name": "International Foundation for People Welfare and Development",
+    "district_id": "dist_01",
+    "lat": 13.0475,
+    "lng": 80.1466,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Women & Child Development",
+      "Environment"
+    ],
     "capacity_tier": "Medium",
-    "website": "https://example.org/livelihood-network"
+    "website": "https://www.ifpwd.org"
   },
   {
-    "ngo_name": "Women Empowerment Trust",
-    "district_id": "dist_15",
-    "sectors": ["Women & Child Development", "Livelihood"],
-    "capacity_tier": "Large",
-    "website": "https://example.org/women-empowerment"
-  },
-  {
-    "ngo_name": "Community Care Foundation",
-    "district_id": "dist_12",
-    "sectors": ["Healthcare", "Education"],
-    "capacity_tier": "Large",
-    "website": "https://example.org/community-care"
-  },
-  {
-    "ngo_name": "Clean Water Mission",
-    "district_id": "dist_06",
-    "sectors": ["Sanitation", "Healthcare"],
+    "ngo_name": "Association for Non-Traditional Employment for Women (ANEW)",
+    "district_id": "dist_01",
+    "lat": 13.0827,
+    "lng": 80.2707,
+    "sectors": [
+      "Livelihood",
+      "Women & Child Development"
+    ],
     "capacity_tier": "Medium",
-    "website": "https://example.org/clean-water"
+    "website": "https://www.anewindia.org"
   },
   {
-    "ngo_name": "Rural Education Network",
-    "district_id": "dist_14",
-    "sectors": ["Education", "Livelihood"],
-    "capacity_tier": "Small",
-    "website": "https://example.org/rural-education"
-  },
-  {
-    "ngo_name": "Sustainable Villages Initiative",
-    "district_id": "dist_18",
-    "sectors": ["Environment", "Livelihood"],
-    "capacity_tier": "Medium",
-    "website": "https://example.org/sustainable-villages"
-  },
-  {
-    "ngo_name": "Child Wellness Foundation",
+    "ngo_name": "Amar Seva Sangam",
     "district_id": "dist_19",
-    "sectors": ["Healthcare", "Women & Child Development"],
+    "lat": 8.7300,
+    "lng": 77.7000,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Livelihood"
+    ],
+    "capacity_tier": "Medium",
+    "website": "https://www.amarseva.org"
+  },
+  {
+    "ngo_name": "Association for Sustainable Community Development (ASSCOD)",
+    "district_id": "dist_02",
+    "lat": 12.5000,
+    "lng": 79.9000,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Livelihood"
+    ],
     "capacity_tier": "Large",
-    "website": "https://example.org/child-wellness"
+    "website": "https://asscod.org"
+  },
+  {
+    "ngo_name": "Native Medicare Charitable Trust",
+    "district_id": "dist_12",
+    "lat": 11.0168,
+    "lng": 76.9558,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Livelihood"
+    ],
+    "capacity_tier": "Medium",
+    "website": "https://www.nmctngo.org"
   }
 ]
