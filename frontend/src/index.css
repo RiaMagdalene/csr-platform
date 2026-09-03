@@ -1000,10 +1000,148 @@ em {
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.1em;
+  color: inherit;
+  cursor: pointer;
 }
 
 .ngo-link:hover {
   text-decoration: underline;
+}
+
+.csr-form {
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #aaa;
+  padding: 20px 0;
+  margin-bottom: 24px;
+}
+
+.form-field {
+  margin-top: 18px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.form-field select,
+.budget-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  background: #fff;
+  min-height: 42px;
+  font: inherit;
+}
+
+.form-field select {
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.budget-input {
+  display: flex;
+  align-items: center;
+}
+
+.budget-input span {
+  padding-left: 12px;
+  font-weight: 700;
+}
+
+.budget-input input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0 12px;
+  min-height: 40px;
+  background: transparent;
+  font: inherit;
+}
+
+.form-field small {
+  display: block;
+  margin-top: 7px;
+  font-size: 9px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.sector-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sector-option {
+  border: 1px solid #999;
+  background: transparent;
+  padding: 9px 10px;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.sector-option:hover,
+.sector-option.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.csr-match-button {
+  width: 100%;
+  margin-top: 20px;
+  min-height: 46px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.csr-match-button:hover {
+  background: #333;
+}
+
+.csr-match-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.district-reset-button {
+  width: 100%;
+  margin-top: 8px;
+  min-height: 38px;
+  border: 1px solid #aaa;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.district-reset-button:hover {
+  border-color: #111;
+}
+
+.match-method-note {
+  margin: 12px 0 16px;
+  padding: 10px;
+  border-left: 2px solid #111;
+  background: #f4f4f4;
+  font-size: 9px;
+  line-height: 1.5;
 }
 
 /* =========================

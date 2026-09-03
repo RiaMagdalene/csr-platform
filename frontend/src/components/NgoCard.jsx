@@ -3,6 +3,11 @@ import { motion } from "framer-motion";
 function NgoCard({ ngo, rank }) {
   const matchScore = Math.round((ngo.match_score || 0) * 100);
 
+  const geoScore = Math.round((ngo.breakdown?.geo || 0) * 100);
+  const sectorScore = Math.round((ngo.breakdown?.sector || 0) * 100);
+  const budgetScore = Math.round((ngo.breakdown?.budget || 0) * 100);
+  const capacityScore = Math.round((ngo.breakdown?.capacity || 0) * 100);
+
   return (
     <motion.div
       className="ngo-card"
@@ -38,50 +43,34 @@ function NgoCard({ ngo, rank }) {
       <div className="ngo-breakdown">
         <div>
           <span>GEOGRAPHY</span>
-
           <div className="score-bar">
-            <div
-              style={{
-                width: `${(ngo.breakdown?.geo || 0) * 100}%`,
-              }}
-            />
+            <div style={{ width: `${geoScore}%` }} />
           </div>
-
-          <strong>
-            {Math.round((ngo.breakdown?.geo || 0) * 100)}%
-          </strong>
+          <strong>{geoScore}%</strong>
         </div>
 
         <div>
           <span>SECTOR</span>
-
           <div className="score-bar">
-            <div
-              style={{
-                width: `${(ngo.breakdown?.sector || 0) * 100}%`,
-              }}
-            />
+            <div style={{ width: `${sectorScore}%` }} />
           </div>
+          <strong>{sectorScore}%</strong>
+        </div>
 
-          <strong>
-            {Math.round((ngo.breakdown?.sector || 0) * 100)}%
-          </strong>
+        <div>
+          <span>BUDGET</span>
+          <div className="score-bar">
+            <div style={{ width: `${budgetScore}%` }} />
+          </div>
+          <strong>{budgetScore}%</strong>
         </div>
 
         <div>
           <span>CAPACITY</span>
-
           <div className="score-bar">
-            <div
-              style={{
-                width: `${(ngo.breakdown?.capacity || 0) * 100}%`,
-              }}
-            />
+            <div style={{ width: `${capacityScore}%` }} />
           </div>
-
-          <strong>
-            {Math.round((ngo.breakdown?.capacity || 0) * 100)}%
-          </strong>
+          <strong>{capacityScore}%</strong>
         </div>
       </div>
 

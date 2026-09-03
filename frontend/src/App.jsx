@@ -2,15 +2,36 @@ import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MapView from "./components/MapView";
 import DistrictPanel from "./components/DistrictPanel";
-import { getDistricts } from "./api";
+import NgoCard from "./components/NgoCard";
+import { getDistricts, getCsrMatches } from "./api";
 import "./index.css";
+
+const SECTORS = [
+  "Education",
+  "Healthcare",
+  "Sanitation",
+  "Livelihood",
+  "Women & Child Development",
+  "Environment",
+];
+
+const CAPACITY_OPTIONS = ["Small", "Medium", "Large"];
 
 function App() {
   const [activePage, setActivePage] = useState("home");
   const [districts, setDistricts] = useState([]);
   const [selectedDistrict, setSelectedDistrict] = useState(null);
-  const [selectedMatchDistrict, setSelectedMatchDistrict] =
-    useState("");
+
+  const [targetDistrict, setTargetDistrict] = useState("");
+  const [selectedSectors, setSelectedSectors] = useState([]);
+  const [budget, setBudget] = useState("");
+  const [requiredCapacity, setRequiredCapacity] =
+    useState("Medium");
+
+  const [matches, setMatches] = useState([]);
+  const [matching, setMatching] = useState(false);
+  const [matchError, setMatchError] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
 
   useEffect(() => {
     async function loadDistricts() {
@@ -58,6 +79,13 @@ function App() {
   function navigate(page) {
     setActivePage(page);
     setSelectedDistrict(null);
+
+    if (page !== "matching") {
+      setMatches([]);
+      setHasSearched(false);
+      setMatchError("");
+    }
+
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -66,6 +94,66 @@ function App() {
 
   function handleDistrictSelect(district) {
     setSelectedDistrict(district);
+  }
+
+  function toggleSector(sector) {
+    setSelectedSectors((current) =>
+      current.includes(sector)
+        ? current.filter((item) => item !== sector)
+        : [...current, sector]
+    );
+  }
+
+  async function handleCsrMatch() {
+    if (!targetDistrict) {
+      setMatchError("Please select a target district.");
+      return;
+    }
+
+    if (!selectedSectors.length) {
+      setMatchError(
+        "Please select at least one CSR focus area."
+      );
+      return;
+    }
+
+    if (!budget || Number(budget) <= 0) {
+      setMatchError("Please enter a valid CSR budget.");
+      return;
+    }
+
+    setMatching(true);
+    setMatchError("");
+    setHasSearched(false);
+
+    try {
+      const results = await getCsrMatches({
+        target_district: targetDistrict,
+        sectors: selectedSectors,
+        budget: Number(budget),
+        required_capacity: requiredCapacity,
+      });
+
+      setMatches(results);
+      setHasSearched(true);
+    } catch (error) {
+      console.error(error);
+      setMatchError(
+        "Unable to generate CSR matches. Please try again."
+      );
+    } finally {
+      setMatching(false);
+    }
+  }
+
+  function clearMatching() {
+    setTargetDistrict("");
+    setSelectedSectors([]);
+    setBudget("");
+    setRequiredCapacity("Medium");
+    setMatches([]);
+    setMatchError("");
+    setHasSearched(false);
   }
 
   return (
@@ -429,8 +517,9 @@ function App() {
 
               <div className="matching-intro">
                 <p>
-                  Select a district and ATLAS ranks
-                  NGOs using three transparent
+                  Tell ATLAS what your CSR programme
+                  needs. The platform ranks implementation
+                  partners using four transparent
                   compatibility signals.
                 </p>
 
@@ -444,79 +533,238 @@ function App() {
                   </span>
 
                   <span>
-                    <b>03</b> CAPACITY
+                    <b>03</b> BUDGET
+                  </span>
+
+                  <span>
+                    <b>04</b> CAPACITY
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="matching-selector">
-              <div className="selector-label">
-                SELECT DISTRICT
+            <div className="csr-form matching-form">
+              <div className="section-label">
+                01 / CSR REQUIREMENTS
               </div>
 
-              <select
-                value={selectedMatchDistrict}
-                onChange={(event) => {
-                  const id =
-                    event.target.value;
+              <div className="form-field">
+                <label htmlFor="target-district">
+                  TARGET DISTRICT
+                </label>
 
-                  setSelectedMatchDistrict(id);
-
-                  const district =
-                    districts.find(
-                      (item) =>
-                        item.id === id
-                    );
-
-                  setSelectedDistrict(
-                    district || null
-                  );
-                }}
-              >
-                <option value="">
-                  Choose a district...
-                </option>
-
-                {districts.map((district) => (
-                  <option
-                    key={district.id}
-                    value={district.id}
-                  >
-                    {district.name}
+                <select
+                  id="target-district"
+                  value={targetDistrict}
+                  onChange={(event) =>
+                    setTargetDistrict(
+                      event.target.value
+                    )
+                  }
+                >
+                  <option value="">
+                    Select district
                   </option>
-                ))}
-              </select>
 
-              <span className="selector-arrow">
-                ↓
-              </span>
+                  {districts.map((district) => (
+                    <option
+                      key={district.id}
+                      value={district.id}
+                    >
+                      {district.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="form-field">
+                <label>
+                  CSR FOCUS AREAS
+                </label>
+
+                <div className="sector-options">
+                  {SECTORS.map((sector) => (
+                    <button
+                      key={sector}
+                      type="button"
+                      className={
+                        selectedSectors.includes(
+                          sector
+                        )
+                          ? "sector-option active"
+                          : "sector-option"
+                      }
+                      onClick={() =>
+                        toggleSector(sector)
+                      }
+                    >
+                      {sector}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="csr-budget">
+                  AVAILABLE CSR BUDGET
+                </label>
+
+                <div className="budget-input">
+                  <span>₹</span>
+
+                  <input
+                    id="csr-budget"
+                    type="number"
+                    min="1"
+                    placeholder="10,00,000"
+                    value={budget}
+                    onChange={(event) =>
+                      setBudget(
+                        event.target.value
+                      )
+                    }
+                  />
+                </div>
+
+                <small>
+                  &lt; ₹5L Small · ₹5L–₹20L Medium ·
+                  &gt; ₹20L Large
+                </small>
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="required-capacity">
+                  REQUIRED NGO CAPACITY
+                </label>
+
+                <select
+                  id="required-capacity"
+                  value={requiredCapacity}
+                  onChange={(event) =>
+                    setRequiredCapacity(
+                      event.target.value
+                    )
+                  }
+                >
+                  {CAPACITY_OPTIONS.map(
+                    (capacity) => (
+                      <option
+                        key={capacity}
+                        value={capacity}
+                      >
+                        {capacity}
+                      </option>
+                    )
+                  )}
+                </select>
+              </div>
+
+              <div className="matching-form-actions">
+                <button
+                  className="csr-match-button"
+                  onClick={handleCsrMatch}
+                  disabled={matching}
+                >
+                  {matching
+                    ? "MATCHING..."
+                    : "FIND NGO MATCHES →"}
+                </button>
+
+                {(hasSearched ||
+                  targetDistrict ||
+                  selectedSectors.length ||
+                  budget) && (
+                  <button
+                    className="district-reset-button"
+                    onClick={clearMatching}
+                    disabled={matching}
+                  >
+                    CLEAR REQUIREMENTS
+                  </button>
+                )}
+              </div>
+
+              {matchError && (
+                <div className="panel-error">
+                  {matchError}
+                </div>
+              )}
             </div>
 
             <div className="matching-results">
-              {selectedDistrict ? (
-                <DistrictPanel
-                  district={selectedDistrict}
-                  onClose={() => {
-                    setSelectedDistrict(null);
-                    setSelectedMatchDistrict("");
-                  }}
-                />
-              ) : (
+              {matching && (
+                <div className="panel-loading">
+                  <div className="loading-line"></div>
+                  <strong>
+                    CALCULATING BEST-FIT PARTNERS
+                  </strong>
+                </div>
+              )}
+
+              {!matching &&
+                hasSearched &&
+                !matchError && (
+                  <section className="panel-section ngo-section">
+                    <div className="ngo-section-header">
+                      <div>
+                        <div className="section-label">
+                          02 / CSR NGO MATCHES
+                        </div>
+
+                        <h3>
+                          Best-fit implementation
+                          partners
+                        </h3>
+                      </div>
+
+                      <span className="match-count">
+                        {matches.length} FOUND
+                      </span>
+                    </div>
+
+                    <div className="match-method-note">
+                      Ranked using 30% geography ·
+                      30% sector · 20% budget ·
+                      20% capacity.
+                    </div>
+
+                    <div className="ngo-list">
+                      {matches.map(
+                        (ngo, index) => (
+                          <NgoCard
+                            key={`${ngo.ngo_name}-${index}`}
+                            ngo={ngo}
+                            rank={index + 1}
+                          />
+                        )
+                      )}
+                    </div>
+
+                    {!matches.length && (
+                      <div className="empty-matches">
+                        No matching organisations found.
+                      </div>
+                    )}
+                  </section>
+                )}
+
+              {!matching && !hasSearched && (
                 <div className="matching-empty">
-                  <span>SELECT A DISTRICT</span>
+                  <span>
+                    ENTER CSR REQUIREMENTS
+                  </span>
 
                   <strong>
-                    NGO recommendations
+                    Your NGO recommendations
                     <br />
-                    appear here.
+                    will appear here.
                   </strong>
 
                   <p>
-                    Choose one of the 20 pilot
-                    districts above to see ranked
-                    organisations and their match
-                    breakdown.
+                    Choose a target district, select
+                    your CSR focus areas, enter the
+                    available budget and define the
+                    required organisational capacity.
                   </p>
                 </div>
               )}
@@ -846,8 +1094,9 @@ function App() {
 
                   <p>
                     NGO compatibility is calculated
-                    from geography, sector alignment and
-                    organisational capacity.
+                    from geography, sector alignment,
+                    budget fit and organisational
+                    capacity.
                   </p>
                 </div>
               </div>
@@ -860,7 +1109,7 @@ function App() {
                 </span>
 
                 <strong>
-                  40% / 35% / 25%
+                  30% / 30% / 20% / 20%
                 </strong>
               </div>
 
@@ -881,6 +1130,16 @@ function App() {
 
                 <strong>
                   NEED ALIGNMENT
+                </strong>
+              </div>
+
+              <div>
+                <span>
+                  BUDGET
+                </span>
+
+                <strong>
+                  SCALE FIT
                 </strong>
               </div>
 

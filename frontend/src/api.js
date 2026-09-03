@@ -23,10 +23,38 @@ export async function getDistrictDetails(districtId) {
 }
 
 export async function getDistrictMatches(districtId) {
-  const response = await fetch(`${API_URL}/districts/${districtId}/matches`);
+  const response = await fetch(
+    `${API_URL}/districts/${districtId}/matches`
+  );
 
   if (!response.ok) {
     throw new Error("Failed to load NGO matches");
+  }
+
+  return response.json();
+}
+
+export async function getCsrMatches({
+  target_district,
+  sectors,
+  budget,
+  required_capacity,
+}) {
+  const response = await fetch(`${API_URL}/matches`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      target_district,
+      sectors,
+      budget,
+      required_capacity,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to find CSR matches");
   }
 
   return response.json();
