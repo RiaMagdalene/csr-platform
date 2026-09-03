@@ -1,0 +1,84 @@
+[
+  {
+    "ngo_name": "Sevalaya",
+    "lat": 13.0827,
+    "lng": 80.2707,
+    "sectors": ["Education", "Healthcare", "Livelihood"],
+    "capacity_tier": "Large",
+    "website": "https://sevalaya.org"
+  },
+  {
+    "ngo_name": "Narpani Foundation",
+    "lat": 13.0418,
+    "lng": 80.2696,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Sanitation",
+      "Women & Child Development",
+      "Environment"
+    ],
+    "capacity_tier": "Medium",
+    "website": "https://www.narpanifoundation.org"
+  },
+  {
+    "ngo_name": "International Foundation for People Welfare and Development",
+    "lat": 13.0475,
+    "lng": 80.1466,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Women & Child Development",
+      "Environment"
+    ],
+    "capacity_tier": "Medium",
+    "website": "https://www.ifpwd.org"
+  },
+  {
+    "ngo_name": "Association for Non-Traditional Employment for Women (ANEW)",
+    "lat": 13.0827,
+    "lng": 80.2707,
+    "sectors": [
+      "Livelihood",
+      "Women & Child Development"
+    ],
+    "capacity_tier": "Medium",
+    "website": "https://anewindia.org"
+  },
+  {
+    "ngo_name": "Amar Seva Sangam",
+    "lat": 8.7300,
+    "lng": 77.7000,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Livelihood"
+    ],
+    "capacity_tier": "Medium",
+    "website": "https://www.amarseva.org"
+  },
+  {
+    "ngo_name": "Association for Sustainable Community Development (ASSCOD)",
+    "lat": 12.5000,
+    "lng": 79.9000,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Livelihood"
+    ],
+    "capacity_tier": "Large",
+    "website": "https://asscod.org"
+  },
+  {
+    "ngo_name": "Native Medicare Charitable Trust",
+    "lat": 11.0168,
+    "lng": 76.9558,
+    "sectors": [
+      "Education",
+      "Healthcare",
+      "Livelihood"
+    ],
+    "capacity_tier": "Medium",
+    "website": "https://nativemedicare.org"
+  }
+]

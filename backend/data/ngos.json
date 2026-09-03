@@ -1,0 +1,72 @@
+[
+  {
+    "ngo_name": "Education First Foundation",
+    "district_id": "dist_01",
+    "sectors": ["Education", "Women & Child Development"],
+    "capacity_tier": "Large",
+    "website": "https://example.org/education-first"
+  },
+  {
+    "ngo_name": "Rural Health Initiative",
+    "district_id": "dist_05",
+    "sectors": ["Healthcare", "Sanitation"],
+    "capacity_tier": "Medium",
+    "website": "https://example.org/rural-health"
+  },
+  {
+    "ngo_name": "Green Tamil Nadu Collective",
+    "district_id": "dist_09",
+    "sectors": ["Environment", "Sanitation"],
+    "capacity_tier": "Large",
+    "website": "https://example.org/green-tamil-nadu"
+  },
+  {
+    "ngo_name": "Livelihood Development Network",
+    "district_id": "dist_07",
+    "sectors": ["Livelihood", "Education"],
+    "capacity_tier": "Medium",
+    "website": "https://example.org/livelihood-network"
+  },
+  {
+    "ngo_name": "Women Empowerment Trust",
+    "district_id": "dist_15",
+    "sectors": ["Women & Child Development", "Livelihood"],
+    "capacity_tier": "Large",
+    "website": "https://example.org/women-empowerment"
+  },
+  {
+    "ngo_name": "Community Care Foundation",
+    "district_id": "dist_12",
+    "sectors": ["Healthcare", "Education"],
+    "capacity_tier": "Large",
+    "website": "https://example.org/community-care"
+  },
+  {
+    "ngo_name": "Clean Water Mission",
+    "district_id": "dist_06",
+    "sectors": ["Sanitation", "Healthcare"],
+    "capacity_tier": "Medium",
+    "website": "https://example.org/clean-water"
+  },
+  {
+    "ngo_name": "Rural Education Network",
+    "district_id": "dist_14",
+    "sectors": ["Education", "Livelihood"],
+    "capacity_tier": "Small",
+    "website": "https://example.org/rural-education"
+  },
+  {
+    "ngo_name": "Sustainable Villages Initiative",
+    "district_id": "dist_18",
+    "sectors": ["Environment", "Livelihood"],
+    "capacity_tier": "Medium",
+    "website": "https://example.org/sustainable-villages"
+  },
+  {
+    "ngo_name": "Child Wellness Foundation",
+    "district_id": "dist_19",
+    "sectors": ["Healthcare", "Women & Child Development"],
+    "capacity_tier": "Large",
+    "website": "https://example.org/child-wellness"
+  }
+]
