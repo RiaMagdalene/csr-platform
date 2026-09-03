@@ -1,0 +1,202 @@
+[
+  {
+    "id": "dist_01",
+    "name": "Chennai",
+    "state": "Tamil Nadu",
+    "lat": 13.0827,
+    "lng": 80.2707,
+    "need_index": 72,
+    "csr_spend": 1200000,
+    "gap_score": 0.81
+  },
+  {
+    "id": "dist_02",
+    "name": "Chengalpattu",
+    "state": "Tamil Nadu",
+    "lat": 12.6819,
+    "lng": 79.9888,
+    "need_index": 68,
+    "csr_spend": 650000,
+    "gap_score": 0.72
+  },
+  {
+    "id": "dist_03",
+    "name": "Kancheepuram",
+    "state": "Tamil Nadu",
+    "lat": 12.8342,
+    "lng": 79.7036,
+    "need_index": 70,
+    "csr_spend": 550000,
+    "gap_score": 0.76
+  },
+  {
+    "id": "dist_04",
+    "name": "Tiruvallur",
+    "state": "Tamil Nadu",
+    "lat": 13.1438,
+    "lng": 79.9089,
+    "need_index": 74,
+    "csr_spend": 500000,
+    "gap_score": 0.79
+  },
+  {
+    "id": "dist_05",
+    "name": "Cuddalore",
+    "state": "Tamil Nadu",
+    "lat": 11.748,
+    "lng": 79.7714,
+    "need_index": 78,
+    "csr_spend": 420000,
+    "gap_score": 0.85
+  },
+  {
+    "id": "dist_06",
+    "name": "Villupuram",
+    "state": "Tamil Nadu",
+    "lat": 11.9401,
+    "lng": 79.4861,
+    "need_index": 76,
+    "csr_spend": 380000,
+    "gap_score": 0.84
+  },
+  {
+    "id": "dist_07",
+    "name": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "lat": 12.1211,
+    "lng": 78.1582,
+    "need_index": 82,
+    "csr_spend": 300000,
+    "gap_score": 0.9
+  },
+  {
+    "id": "dist_08",
+    "name": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "lat": 12.5186,
+    "lng": 78.2137,
+    "need_index": 80,
+    "csr_spend": 350000,
+    "gap_score": 0.87
+  },
+  {
+    "id": "dist_09",
+    "name": "Salem",
+    "state": "Tamil Nadu",
+    "lat": 11.6643,
+    "lng": 78.146,
+    "need_index": 73,
+    "csr_spend": 700000,
+    "gap_score": 0.74
+  },
+  {
+    "id": "dist_10",
+    "name": "Namakkal",
+    "state": "Tamil Nadu",
+    "lat": 11.2189,
+    "lng": 78.1674,
+    "need_index": 75,
+    "csr_spend": 450000,
+    "gap_score": 0.81
+  },
+  {
+    "id": "dist_11",
+    "name": "Erode",
+    "state": "Tamil Nadu",
+    "lat": 11.341,
+    "lng": 77.7172,
+    "need_index": 69,
+    "csr_spend": 800000,
+    "gap_score": 0.68
+  },
+  {
+    "id": "dist_12",
+    "name": "Coimbatore",
+    "state": "Tamil Nadu",
+    "lat": 11.0168,
+    "lng": 76.9558,
+    "need_index": 62,
+    "csr_spend": 1400000,
+    "gap_score": 0.58
+  },
+  {
+    "id": "dist_13",
+    "name": "Tiruppur",
+    "state": "Tamil Nadu",
+    "lat": 11.1085,
+    "lng": 77.3411,
+    "need_index": 65,
+    "csr_spend": 900000,
+    "gap_score": 0.64
+  },
+  {
+    "id": "dist_14",
+    "name": "Dindigul",
+    "state": "Tamil Nadu",
+    "lat": 10.3673,
+    "lng": 77.9803,
+    "need_index": 79,
+    "csr_spend": 320000,
+    "gap_score": 0.88
+  },
+  {
+    "id": "dist_15",
+    "name": "Madurai",
+    "state": "Tamil Nadu",
+    "lat": 9.9252,
+    "lng": 78.1198,
+    "need_index": 71,
+    "csr_spend": 850000,
+    "gap_score": 0.7
+  },
+  {
+    "id": "dist_16",
+    "name": "Thanjavur",
+    "state": "Tamil Nadu",
+    "lat": 10.787,
+    "lng": 79.1378,
+    "need_index": 67,
+    "csr_spend": 600000,
+    "gap_score": 0.69
+  },
+  {
+    "id": "dist_17",
+    "name": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "lat": 10.7905,
+    "lng": 78.7047,
+    "need_index": 66,
+    "csr_spend": 750000,
+    "gap_score": 0.65
+  },
+  {
+    "id": "dist_18",
+    "name": "Pudukkottai",
+    "state": "Tamil Nadu",
+    "lat": 10.3797,
+    "lng": 78.8208,
+    "need_index": 77,
+    "csr_spend": 400000,
+    "gap_score": 0.86
+  },
+  {
+    "id": "dist_19",
+    "name": "Tirunelveli",
+    "state": "Tamil Nadu",
+    "lat": 8.7139,
+    "lng": 77.7567,
+    "need_index": 74,
+    "csr_spend": 500000,
+    "gap_score": 0.78
+  },
+  {
+    "id": "dist_20",
+    "name": "Thoothukudi",
+    "state": "Tamil Nadu",
+    "lat": 8.7642,
+    "lng": 78.1348,
+    "need_index": 76,
+    "csr_spend": 450000,
+    "gap_score": 0.82
+  }
+]

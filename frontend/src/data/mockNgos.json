@@ -1,0 +1,62 @@
+[
+  {
+    "ngo_name": "Teach For India",
+    "match_score": 0.92,
+    "breakdown": {
+      "geo": 0.95,
+      "sector": 0.9,
+      "capacity": 0.9
+    },
+    "sectors": ["Education", "Livelihood"],
+    "capacity_tier": "Large",
+    "website": "https://www.teachforindia.org"
+  },
+  {
+    "ngo_name": "Hand in Hand India",
+    "match_score": 0.88,
+    "breakdown": {
+      "geo": 0.9,
+      "sector": 0.85,
+      "capacity": 0.85
+    },
+    "sectors": ["Livelihood", "Sanitation", "Women & Child Development"],
+    "capacity_tier": "Large",
+    "website": "https://www.hihindia.org"
+  },
+  {
+    "ngo_name": "Agastya International Foundation",
+    "match_score": 0.84,
+    "breakdown": {
+      "geo": 0.8,
+      "sector": 0.9,
+      "capacity": 0.8
+    },
+    "sectors": ["Education", "Environment"],
+    "capacity_tier": "Large",
+    "website": "https://www.agastya.org"
+  },
+  {
+    "ngo_name": "SNEHA",
+    "match_score": 0.79,
+    "breakdown": {
+      "geo": 0.75,
+      "sector": 0.8,
+      "capacity": 0.8
+    },
+    "sectors": ["Healthcare", "Women & Child Development"],
+    "capacity_tier": "Medium",
+    "website": "https://snehamumbai.org"
+  },
+  {
+    "ngo_name": "Environmental Foundation of India",
+    "match_score": 0.74,
+    "breakdown": {
+      "geo": 0.7,
+      "sector": 0.8,
+      "capacity": 0.7
+    },
+    "sectors": ["Environment", "Sanitation"],
+    "capacity_tier": "Medium",
+    "website": "https://indiaenvironment.org"
+  }
+]
